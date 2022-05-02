@@ -9,27 +9,27 @@
         <nav id="navbar" class="navbar">
             <ul>
                 <li><a class="nav-link active" aria-current="page" [routerLink]="['/public-page']" routerLinkActive="true">Home</a
-                  ></li>
-                <li><a
-                    class="nav-link active"
-                    aria-current="page"
-                    [routerLink]="['/restricted-page']"
-                    routerLinkActive="true"
-                    *ngIf="isLoggedIn()"
-                    >Mentorship Section</a
-                  ></li>
-                <li></li>
-                <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+                ></li>
+              <li><a
+                  class="nav-link active"
+                  aria-current="page"
+                  [routerLink]="['/restricted-page']"
+                  routerLinkActive="true"
+                  *ngIf="isLoggedIn()"
+                  >Mentorship Section</a
+                ></li>
+              <li></li>
+              <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
             </ul>
             <i class="bi bi-list mobile-nav-toggle"></i>
         </nav>
         <div class="d-flex position-absolute top-5 end-0 px-5">
             <button (click)="login()" *ngIf="!isLoggedIn()" class="btn btn-primary" type="button">
-              SIGN IN
-            </button>
+            SIGN IN
+          </button>
             <button (click)="logout()" *ngIf="isLoggedIn()" class="btn btn-danger" type="button">
-              SIGN OUT
-            </button>
+            SIGN OUT
+          </button>
         </div>
         <!-- .navbar -->
 
