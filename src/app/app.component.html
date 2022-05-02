@@ -1,71 +1,50 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <a class="navbar-brand"> PICT Interact </a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            [routerLink]="['/public-page']"
-            routerLinkActive="true"
-            >Home</a
-          >
-        </li>
-        <li class="nav-item">
-          <a
-            class="nav-link active"
-            aria-current="page"
-            [routerLink]="['/restricted-page']"
-            routerLinkActive="true"
-            *ngIf="isLoggedIn()"
-            >Mentorship Section</a
-          >
-        </li>
-      </ul>
-      <div class="d-flex">
-        <button
-          (click)="login()"
-          *ngIf="!isLoggedIn()"
-          class="btn btn-primary"
-          type="button"
-        >
-          SIGN IN
-        </button>
-        <button
-          (click)="logout()"
-          *ngIf="isLoggedIn()"
-          class="btn btn-danger"
-          type="button"
-        >
-          SIGN OUT
-        </button>
-      </div>
+<header id="header" class="header sticky-top bg-white">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-center">
+
+        <a href="http://localhost:4200/" class="logo d-flex align-items-center" style="text-decoration: none">
+            <img src="favicon.ico" alt="">
+            <span>PICT INTERACT</span>
+        </a>
+
+        <nav id="navbar" class="navbar">
+            <ul>
+                <li><a class="nav-link active" aria-current="page" [routerLink]="['/public-page']" routerLinkActive="true">Home</a
+                  ></li>
+                <li><a
+                    class="nav-link active"
+                    aria-current="page"
+                    [routerLink]="['/restricted-page']"
+                    routerLinkActive="true"
+                    *ngIf="isLoggedIn()"
+                    >Mentorship Section</a
+                  ></li>
+                <li></li>
+                <!-- <li><a class="getstarted scrollto" href="#about">Get Started</a></li> -->
+            </ul>
+            <i class="bi bi-list mobile-nav-toggle"></i>
+        </nav>
+        <div class="d-flex position-absolute top-5 end-0 px-5">
+            <button (click)="login()" *ngIf="!isLoggedIn()" class="btn btn-primary" type="button">
+              SIGN IN
+            </button>
+            <button (click)="logout()" *ngIf="isLoggedIn()" class="btn btn-danger" type="button">
+              SIGN OUT
+            </button>
+        </div>
+        <!-- .navbar -->
+
     </div>
-  </div>
-</nav>
-<!-- <a [routerLink]="['/public-page']" routerLinkActive="true">[PUBLIC-PAGE]</a>
-<a
-  [routerLink]="['/restricted-page']"
-  routerLinkActive="true"
-  *ngIf="isLoggedIn()"
-  >[RESTRICTED-PAGE]</a
-> -->
-<!-- <div *ngIf="isLoggedIn()">
-  <h3>You are logged in</h3>
-</div>
-<div *ngIf="!isLoggedIn()">
-  <h3>You are NOT logged in</h3>
-</div> -->
+</header>
+
+<!-- Vendor JS Files -->
+<script src="assets/vendor/purecounter/purecounter.js"></script>
+<script src="assets/vendor/aos/aos.js"></script>
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+<script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+<script src="assets/vendor/isotope-layout/isotope.pkgd.min.js"></script>
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+<script src="assets/vendor/php-email-form/validate.js"></script>
+
+<!-- Template Main JS File -->
+<script src="assets/js/main.js"></script>
 <router-outlet></router-outlet>
