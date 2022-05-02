@@ -11,7 +11,7 @@ export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
     auth: {
       clientId: 'd2a4eafe-015b-4f4b-8f62-501a693a2c90',
-      redirectUri: 'https://a2k007.github.io/PICT_Interact/'
+      redirectUri: 'http://localhost:4200/'
     }
   });
 }
