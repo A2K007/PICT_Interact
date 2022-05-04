@@ -6,6 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PublicPageComponent } from './public-page/public-page.component';
 import { RestrictedPageComponent } from './restricted-page/restricted-page.component';
+import { ProfItemComponent } from './prof-item/prof-item.component';
+import { AddProfileComponent } from './add-profile/add-profile.component';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -20,7 +22,9 @@ export function MSALInstanceFactory(): IPublicClientApplication {
   declarations: [
     AppComponent,
     PublicPageComponent,
-    RestrictedPageComponent
+    RestrictedPageComponent,
+    ProfItemComponent,
+    AddProfileComponent
   ],
   imports: [
     BrowserModule,

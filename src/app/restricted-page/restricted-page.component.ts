@@ -22,6 +22,31 @@ export class RestrictedPageComponent implements OnInit {
         name: "Ashutosh Rokade",
         expertis: "DS",
         contact: 9845612456,
+      },
+      {
+        name: "Ashutosh Rokade",
+        expertis: "DS",
+        contact: 9845612456,
+      },
+      {
+        name: "Ashutosh Rokade",
+        expertis: "DS",
+        contact: 9845612456,
+      },
+      {
+        name: "Ashutosh Rokade",
+        expertis: "DS",
+        contact: 9845612456,
+      },
+      {
+        name: "Ashutosh Rokade",
+        expertis: "DS",
+        contact: 9845612456,
+      },
+      {
+        name: "Ashutosh Rokade",
+        expertis: "DS",
+        contact: 9845612456,
       }
     ]
     this.cp = [
