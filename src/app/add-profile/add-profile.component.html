@@ -1,0 +1,49 @@
+<div class="row px-5 mt-2">
+    <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#addprofmodal">
+        Add My Profile
+    </button>
+    <div class="modal fade" id="addprofmodal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                    <button type="button" class="close" data-bs-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+                </div>
+                <div class="modal-body">
+                    <form (ngSubmit)="onSubmit()">
+                        <div class="form-group mb-2">
+                            <label for="studname">Full Name : </label>
+                            <input type="text" [(ngModel)]="studname" class="form-control" name="studname" id="studname" aria-describedby="Enter Your Name" placeholder="Name - Surname">
+                        </div>
+                        <div class="form-group mb-2">
+                            <div class="row">
+                                <label class="mr-sm-2" for="sel">Choose Your Expertis: </label>
+                            </div>
+                            <div class="row">
+                                <select class="custom-select" [(ngModel)]="sel" id="sel" name="sel">
+                                    <!-- <option selected>Choose...</option> -->
+                                    <option value="Data Science">Data Science</option>
+                                    <option value="Competitive Programming">Competitive Programming</option>
+                                    <option value="Machine Learning and Artificial Intellegence">Machine Learning and Artificial Intellegence</option>
+                                    <option value="Cloud Computing">Cloud Computing</option>
+                                    <option value="Web Development">Web Development</option>
+                                    <option value="App Development">App Development</option>
+                                    <option value="Network and Security">Network and Security</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group mb-5">
+                            <label for="studcontact">Contact Number : </label>
+                            <input type="number" [(ngModel)]="studcontact" class="form-control" name="studcontact" id="studcontact" aria-describedby="Enter Your Name" placeholder="Without +91">
+                        </div>
+                        <div class="row align-items-center">
+                            <button type=" submit " class="btn btn-primary ">Submit</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
