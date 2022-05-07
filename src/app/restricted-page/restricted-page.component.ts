@@ -11,58 +11,37 @@ export class RestrictedPageComponent implements OnInit {
   all: Profiles[];
   cp: Profiles[];
   ds: Profiles[];
+  mlai: Profiles[];
+  cc: Profiles[];
+  wd: Profiles[];
+  ad: Profiles[];
+  ns: Profiles[];
+  localItem: string;
   constructor(private authService: MsalService) {
-    this.all = [
-      {
-        name: "Avishkar Kakade",
-        expertis: "CP",
-        contact: 737902951,
-      },
-      {
-        name: "Ashutosh Rokade",
-        expertis: "DS",
-        contact: 9845612456,
-      },
-      {
-        name: "Ashutosh Rokade",
-        expertis: "DS",
-        contact: 9845612456,
-      },
-      {
-        name: "Ashutosh Rokade",
-        expertis: "DS",
-        contact: 9845612456,
-      },
-      {
-        name: "Ashutosh Rokade",
-        expertis: "DS",
-        contact: 9845612456,
-      },
-      {
-        name: "Ashutosh Rokade",
-        expertis: "DS",
-        contact: 9845612456,
-      },
-      {
-        name: "Ashutosh Rokade",
-        expertis: "DS",
-        contact: 9845612456,
-      }
-    ]
-    this.cp = [
-      {
-        name: "Avishkar Kakade",
-        expertis: "CP",
-        contact: 737902951,
-      }
-    ]
-    this.ds = [
-      {
-        name: "Ashutosh Rokade",
-        expertis: "DS",
-        contact: 9845612456,
-      }
-    ]
+    this.localItem = localStorage.getItem("profs");
+    if(this.localItem == null)
+    {
+      this.all = [
+      ]
+      this.cp = [
+      ]
+      this.ds = [
+      ]
+      this.mlai = [
+      ]
+      this.cc = [
+      ]
+      this.wd = [
+      ]
+      this.ad = [
+      ]
+      this.ns = [
+      ]
+    }
+    else
+    {
+      this.all = JSON.parse(this.localItem);
+    }
   }
 
   getName(): string {
@@ -96,5 +75,15 @@ export class RestrictedPageComponent implements OnInit {
   }
   ngOnInit(): void {
   }
-
+  addingprof(prof: Profiles){
+    console.log(prof);
+    this.all.push(prof);
+    localStorage.setItem("profs", JSON.stringify(this.all))
+    if(prof.expertis=="Data Science")
+    {
+      console.log("yeah ds boie");
+      this.ds.push(prof);
+      localStorage.setItem("profs", JSON.stringify(this.ds))
+    }
+  }
 }

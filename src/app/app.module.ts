@@ -8,6 +8,7 @@ import { PublicPageComponent } from './public-page/public-page.component';
 import { RestrictedPageComponent } from './restricted-page/restricted-page.component';
 import { ProfItemComponent } from './prof-item/prof-item.component';
 import { AddProfileComponent } from './add-profile/add-profile.component';
+import { FormsModule } from '@angular/forms';
 
 export function MSALInstanceFactory(): IPublicClientApplication {
   return new PublicClientApplication({
@@ -29,7 +30,8 @@ export function MSALInstanceFactory(): IPublicClientApplication {
   imports: [
     BrowserModule,
     AppRoutingModule,
-    MsalModule
+    MsalModule,
+    FormsModule
   ],
   providers: [
     {
